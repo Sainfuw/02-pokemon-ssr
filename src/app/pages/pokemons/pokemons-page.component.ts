@@ -12,10 +12,11 @@ import { PokemonListComponent } from '@app/pokemons/components/pokemon-list/poke
 import { ISimplePokemon } from '@app/pokemons/interfaces/simple-pokemon.interface'
 import { PokemonsService } from '@app/pokemons/services/pokemons.service'
 import { map, tap } from 'rxjs'
+import { PokemonListSkeletonComponent } from '../../pokemons/components/pokemon-list-skeleton/pokemon-list-skeleton.component'
 
 @Component({
   selector: 'pokemons-page',
-  imports: [PokemonListComponent],
+  imports: [PokemonListComponent, PokemonListSkeletonComponent],
   templateUrl: './pokemons-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

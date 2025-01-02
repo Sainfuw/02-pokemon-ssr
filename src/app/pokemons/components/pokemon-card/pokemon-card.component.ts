@@ -4,11 +4,12 @@ import {
   computed,
   input,
 } from '@angular/core'
+import { RouterLink } from '@angular/router'
 import { ISimplePokemon } from '@app/pokemons/interfaces/simple-pokemon.interface'
 
 @Component({
   selector: 'pokemon-card',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './pokemon-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

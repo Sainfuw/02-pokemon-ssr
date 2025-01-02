@@ -1,9 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { inject, Injectable } from '@angular/core'
-import {
-  IPokeAPIResponse,
-  ISimplePokemon,
-} from '@app/pokemons/interfaces/simple-pokemon.interface'
+import { IPokeAPIResponse } from '@app/pokemons/interfaces/simple-pokemon.interface'
 import { map } from 'rxjs'
 import { IPokemonInfo } from '../interfaces/pokemon-info.interface'
 
@@ -29,7 +26,8 @@ export class PokemonsService {
       )
   }
 
-  getPokemon(pokemon: ISimplePokemon) {
-    return this.http.get<IPokemonInfo>(pokemon.url)
+  getPokemon(id: string) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}/`
+    return this.http.get<IPokemonInfo>(url)
   }
 }
